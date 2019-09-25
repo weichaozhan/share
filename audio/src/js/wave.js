@@ -12,7 +12,7 @@ function buildAudioWave() {
     
     const source = audioCtx.createMediaElementSource(audio);
     const analyser = audioCtx.createAnalyser();
-    const bufferLength = 512;
+    const bufferLength = 256;
     const dataArray = new Uint8Array(bufferLength);
     source.connect(analyser);
     source.connect(audioCtx.destination);

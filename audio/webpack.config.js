@@ -41,7 +41,6 @@ module.exports = {
       template: './src/index.html',
       favicon: ''
     }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
