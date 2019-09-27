@@ -12,21 +12,6 @@
         demo2：<button id="sound-click" >点击播放</button>
     </div>
 
-    <code lang="jacascript" class="code">
-      var audioCtx = new AudioContext();<br/>
-      var oscillator = audioCtx.createOscillator();<br/>
-      var gainNode = audioCtx.createGain();<br/>
-      oscillator.connect(gainNode);<br/>
-      gainNode.connect(audioCtx.destination);<br/>
-      oscillator.type = 'sine';<br/>
-      oscillator.frequency.value = ARRFREQUENCY[TIGERS[index]];<br/>
-      gainNode.gain.setValueAtTime(0, audioCtx.currentTime);<br/>
-      gainNode.gain.linearRampToValueAtTime(1, audioCtx.currentTime + 0.01);<br/>
-      oscillator.start(audioCtx.currentTime);<br/>
-      gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1);<br/>
-      oscillator.stop(audioCtx.currentTime + 1);
-    </code>
-
     <img src="./images/workflow-s.png" width="1000" />
     <br/>
     <h3 style="margin: 10px;" >波形</h3>

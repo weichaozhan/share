@@ -30,7 +30,7 @@ function productSound() {
       return;
     }
 
-    const timer = frequency === 0 ? 100 : 800;
+    const timer = frequency === 0 ? 100 : 550;
     
     // oscillator.frequency.value = 500 + ((Math.random() * 100).toFixed(0) * 1);
     oscillator.frequency.value = frequency;
