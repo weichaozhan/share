@@ -37,9 +37,9 @@ function productSound() {
     
     
     if (frequency) {
-      oscillator.start(audioContext.currentTime); // 开始播放声音
       gainNode.gain.setValueAtTime(0, audioContext.currentTime); // 设置当前时间音量为 0， 0 - 1
-      gainNode.gain.linearRampToValueAtTime(1, audioContext.currentTime + timer/100000); // audioContext.currentTime + 0.01 时音量线性变化到 1 
+      gainNode.gain.linearRampToValueAtTime(0.2, audioContext.currentTime + timer/100000); // audioContext.currentTime + 0.01 时音量线性变化到 1 
+      oscillator.start(audioContext.currentTime); // 开始播放声音
       gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + timer/1000); // audioContext.currentTime + 1 时音量指数变化到 0.001
       oscillator.stop(audioContext.currentTime + timer/1000 + 0.01); // 开始播放声音
     }
