@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>css</title>
+    <meta charset="utf-8" />
+    <style>
+      .filter {
+        margin-bottom: 10px;
+        padding: 20px;
+        position: relative;
+        background: #000;
+        text-align: center;
+      }
+      .hue {
+        animation: hueRotate 3s linear infinite alternate both;
+      }
+
+      .blur {
+        animation: blur 1.5s linear infinite alternate both;
+      }
+
+      .contrast {
+        animation: contrast 2s ease-out infinite alternate both;
+      }
+
+      .filter-fusion {
+        height: 150px;
+        background: #fff;
+        filter: contrast(20);
+      }
+      .fusion {
+        position: absolute;
+        border-radius: 1000px;
+        transform: translateY(-50%);
+      }
+      .fusion-small {
+        width: 50px;
+        height: 50px;
+        top: 50%;
+        background: blue;
+        filter: blur(10px);
+        animation: fusionSmall 3s linear infinite alternate;
+      }
+      .fusion-big {
+        width: 100px;
+        height: 100px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #000;
+        filter: blur(10px);
+        animation: fusionBig 3s linear infinite alternate;
+      }
+
+      @keyframes filterFusion {
+        from {
+          filter: contrast(20%);
+        }
+        to {
+          filter: contrast(20%);
+        }
+      }
+      @keyframes fusionSmall {
+        from {
+          left: calc(50% - 110px);
+        }
+        to {
+          left: calc(50% + 80px);
+        }
+      }
+      
+      @keyframes hueRotate {
+        from {
+          filter: hue-rotate(10deg);
+        }
+        to {
+          filter: hue-rotate(360deg);
+        }
+      }
+      @keyframes blur {
+        from {
+          filter: blur(0px);
+        }
+        to {
+          filter: blur(20px);
+        }
+      }
+      @keyframes contrast {
+        0% {
+          filter: contrast(200%);
+        }
+        50% {
+          filter: contrast(100%);
+        }
+        100% {
+          filter: contrast(1%);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="filter" >
+      <img class="hue" src="./fish.jpg" />
+    </div>
+
+    <div class="filter" >
+      <img class="blur" src="./fish.jpg" />
+    </div>
+
+    <div class="filter" >
+      <img class="contrast" src="./fish.jpg" />
+    </div>
+
+    <div class="filter filter-fusion" >
+      <div class="fusion fusion-big" >
+      </div>
+
+      <div class="fusion fusion-small" >
+      </div>
+    </div>
+  </body>
+</html>
